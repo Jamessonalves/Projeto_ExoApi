@@ -40,12 +40,14 @@ namespace Exo.WebApi.Controllers
             }
             return Ok(projeto);
         }
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Projeto projeto)
         {
             _projetoRepository.Atualizar(id, projeto);
             return StatusCode(204);
         }
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
